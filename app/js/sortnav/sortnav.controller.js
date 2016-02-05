@@ -5,8 +5,16 @@
 		.module('twodew')
 		.controller('SortnavController', SortnavController);
 
-	SortnavController.$inject = ['$scope', '$state', 'SharedProperties'];
+	/* @ngInject */
+	function SortnavController() {
+		var vm = this;
+		vm.title = 'SortnavController';
 
-	function SortnavController($scope, $state, shared) {}
+		activate();
+
+		function activate() {
+		}
+	}
+
 })();
 

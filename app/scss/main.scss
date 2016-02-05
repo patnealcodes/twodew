@@ -135,9 +135,12 @@ html, body {
 
 .td-sort {
 	@extend .clearfix;
+	height: 2.25em;
 }
+
 .td-sort-option {
 	@extend .sortable;
+	@include transition(padding .2s);
 
 	&.active {
 		padding: .5em 0;

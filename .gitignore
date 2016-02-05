@@ -1,0 +1,6 @@
+.bowerrc
+.sass-cache
+.idea
+css
+node_modules
+app/bower_components

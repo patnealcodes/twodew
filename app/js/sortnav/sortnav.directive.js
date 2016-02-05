@@ -5,11 +5,8 @@
 		.module('twodew')
 		.directive('sortNav', sortNav);
 
-	sortNav.$inject = ['SharedProperties'];
-
-	/* @ngInject */
-	function sortNav(shared) {
-		return {
+	function sortNav() {
+		var directive = {
 			controller: 'SortnavController',
 			controllerAs: 'sortnavCtrl',
 			link: link,
@@ -18,9 +15,9 @@
 			templateUrl: 'js/sortnav/sortnav.html',
 			scope: {}
 		};
+		return directive;
 
-		function link(scope, element, attr, sortnavCtrl) {}
+		function link(scope, element, attrs) {}
 	}
 
 })();
-

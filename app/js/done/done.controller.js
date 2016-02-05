@@ -3,13 +3,19 @@
 
 	angular
 		.module('twodew')
-		.controller('DoneController', DoneController)
-	;
+		.controller('DoneController', DoneController);
 
-	DoneController.$inject = ['$state', '$rootScope'];
+	DoneController.$inject = ['$state'];
 
-	function DoneController($state, $rootScope) {
-		$rootScope.currentSort = $state.current.name;
+	function DoneController($state) {
+		var vm = this;
+		vm.title = 'DoneController';
+
+		activate();
+
+		function activate() {
+			console.log($state.current.name);
+		}
 	}
 
 })();
