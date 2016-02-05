@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html
+	lang="en"
+	ng-app="twodew"
+>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#51525e">
+	<meta name="msapplication-TileColor" content="#51525e">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<title>TwoDew</title>
+</head>
+<body>
+
+	<!-- Modal Stuffs -->
+	<div class="modal-background"></div>
+	<section class="modal-content">
+		<h1>Setting Options Go Here</h1>
+	</section>
+
+	<!-- App -->
+	<header class="td-header">
+		<span class="fa fa-ellipsis-v td-header-menu-icon"></span>
+		<h1 class="td-logo">
+			<img src="img/twodew-logo.png" alt="Two Dew">
+			<span>TODO APP</span>
+		</h1>
+	</header>
+
+	<div class="td-main-container">
+		<side-menu></side-menu>
+		<section class="td-view-container">
+			<sort-nav></sort-nav>
+			<ui-view></ui-view>
+		</section>
+	</div>
+
+	<!-- Scripts -->
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/underscore/underscore-min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="js/main.js"></script>
+
+	<script src="js/shared/props.service.js"></script>
+	<script src="js/todo/todo.controller.js"></script>
+	<script src="js/doing/doing.controller.js"></script>
+	<script src="js/done/done.controller.js"></script>
+	<script src="js/sidemenu/sidemenu.controller.js"></script>
+	<script src="js/sidemenu/sidemenu.directive.js"></script>
+	<script src="js/sortnav/sortnav.controller.js"></script>
+	<script src="js/sortnav/sortnav.directive.js"></script>
+</body>
+</html>

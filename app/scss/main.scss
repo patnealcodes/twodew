@@ -1,0 +1,298 @@
+// Font
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400);
+
+// Imports
+@import 'vars';
+@import 'reset';
+@import 'mixins';
+@import '../../node_modules/font-awesome/scss/font-awesome';
+
+// Global
+html, body {
+	height: 100%;
+}
+
+.modal-background {
+	background: rgba(black, .5);
+	bottom: 0;
+	display: none;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 10;
+}
+.modal-content {
+	@include borderRadius(.25em);
+	@include boxShadow(0 0 1em rgba(black, .25));
+	background: white;
+	bottom: 10%;
+	display: none;
+	left: 10%;
+	position: fixed;
+	right: 10%;
+	top: 10%;
+	z-index: 10;
+
+}
+
+.sortable {
+	@include transition(opacity .2s);
+	color: white;
+	cursor: pointer;
+	display: block;
+	float: left;
+	padding: .25em 0;
+	text-align: center;
+	text-decoration: none;
+	width: (100% / 3);
+
+	&.todo { background: $red; }
+	&.doing { background: $blue; }
+	&.done { background: $green; }
+
+	&:hover {
+		opacity: .75;
+	}
+}
+
+// Header
+.td-header {
+	@extend .clearfix;
+	background: $main-gray;
+	color: white;
+	padding: .5em 1em;
+	text-align: center;
+}
+
+.td-header-menu-icon {
+	@include transition(all .2s);
+	@include transform(rotate(90deg));
+	display: block;
+	float: left;
+	font-size: 2.5em;
+	height: 1em;
+	width: 1em;
+
+	.td-active-menu & {
+		@include transform(rotate(0));
+	}
+}
+
+.td-logo {
+	img {
+		display: inline;
+		max-height: 1em;
+		padding: 0 .5em 0 0;
+		vertical-align: middle;
+	}
+	span {
+		font-weight: 300;
+		font-size: 1em;
+		vertical-align: middle;
+
+		@media (max-width: $mq-mobile) {
+			display: none;
+		}
+	}
+}
+
+.td-main-container {
+	@extend .clearfix;
+	height: 100%;
+	position: relative;
+}
+
+.td-side-menu {
+	@include transition(all .2s);
+	@include transform(translateX(-100%));
+	background: $main-gray;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+
+	.td-active-menu & {
+		@include transform(translateX(0));
+	}
+}
+
+.td-header-menu-list {
+	color: white;
+}
+
+.td-header-menu-item {
+	@include transition(all .2s);
+	border-top: 1px solid #707280;
+	cursor: pointer;
+	padding: .5em 1em;
+
+	&:hover {
+		background-color: rgba(white, .1);
+	}
+}
+
+.td-sort {
+	@extend .clearfix;
+}
+.td-sort-option {
+	@extend .sortable;
+
+	&.active {
+		padding: .5em 0;
+	}
+}
+
+.td-tasks {
+	@extend .clearfix;
+	padding: 5%;
+}
+
+.td-task {
+	@include boxShadow( 0 0 .25em rgba(black, .25) );
+	float: left;
+	margin: 0 5% 5% 0;
+	overflow: hidden;
+	position: relative;
+	width: (90% / 3);
+
+	@media (min-width: ($mq-med + 1)) {
+		&:nth-child(3n+3) {
+			margin-right: 0;
+		}
+	}
+	@media (max-width: $mq-med) and (min-width: ($mq-mobile + 1)) {
+		width: (95% / 2);
+
+		&:nth-child(2n+2) {
+			margin-right: 0;
+		}
+	}
+
+	@media (max-width: $mq-mobile) {
+		width: 100%;
+	}
+}
+
+.td-task-settings-page {
+	@include transform(translateX(100%));
+	@include transition(transform .2s);
+	background: rgba(white, .95);
+	bottom: 0;
+	display: block;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+
+	.settings & {
+		@include transform(translateX(0));
+	}
+}
+
+.td-task-settings-option {
+	@extend .clearfix;
+	margin: 1em 0 0;
+
+	.left {
+		float: left;
+		padding: 0 .5em 0 0;
+		text-align: right;
+		width: 50%;
+	}
+
+	.right {
+		float: right;
+		padding: 0 0 0 .5em;
+		text-align: left;
+		width: 50%;
+	}
+}
+
+.td-task-selected-swatch {
+	@include borderRadius(.25em);
+	background: $red;
+	display: block;
+	height: 1em;
+	width: 1em;
+}
+
+.td-task-settings-header {
+	display: block;
+	font-weight: bold;
+	padding: .25em;
+}
+
+.td-task-settings-confirm {
+	color: black;
+	cursor: pointer;
+	font-size: .75em;
+	position: absolute;
+	right: .25em;
+	top: .25em;
+}
+
+.td-task-header {
+	background: $red;
+	color: white;
+	padding: .25em;
+	position: relative;
+
+	h1 {
+		font-weight: lighter;
+		margin: 0 1.25em;
+		overflow: hidden;
+		text-align: center;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
+
+.td-task-icon {
+	left: .25em;
+	margin: -.5em 0 0;
+	position: absolute;
+	top: 50%;
+}
+
+.td-task-settings-toggle {
+	@include transition(opacity .2s);
+	cursor: pointer;
+	font-size: .75em;
+	opacity: .25;
+	position: absolute;
+	right: .25em;
+	top: .25em;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+.td-task-content {
+	font-size: .75em;
+	padding: .5em 1em;
+}
+
+.td-task-actions {
+	@extend .clearfix;
+
+	&:hover {
+		.td-task-action {
+			opacity: 1;
+		}
+	}
+
+	.td-task-action {
+		@extend .sortable;
+		font-size: .75em;
+		opacity: .25;
+		padding: .5em 0;
+
+		&:hover {
+			opacity: .75;
+		}
+	}
+}

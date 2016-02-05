@@ -1,0 +1,21 @@
+<div>
+	<nav class="td-sort" >
+		<a
+			ui-sref="todo"
+			ng-class="{'active': currentSort === 'todo'}"
+			class="td-sort-option td-sort-option todo"
+		>ToDo</a>
+		<a
+			ui-sref="doing"
+			ng-class="{'active': currentSort === 'doing'}"
+			class="td-sort-option td-sort-option doing"
+		>Doing</a>
+		<a
+			ui-sref="done"
+			ng-class="{'active': currentSort === 'done'}"
+			class="td-sort-option td-sort-option done"
+		>Done</a>
+	</nav>
+
+	State: {{currentSort}}
+</div>
