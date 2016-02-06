@@ -5,16 +5,19 @@
 		.module('twodew')
 		.controller('TodoController', TodoController);
 
-	TodoController.$inject = ['$state'];
+	TodoController.$inject = ['$state', '$http'];
 
-	function TodoController($state) {
-		var vm = this;
-		vm.title = 'TodoController';
+	function TodoController($state, $http) {
+		var todoCtrl = this;
+		todoCtrl.title = 'TodoController';
 
 		activate();
 
 		function activate() {
-			console.log($state.current.name);
+			$http.get('data/todo.json')
+				.then(function (response) {
+					todoCtrl.tasks = response.data;
+				});
 		}
 	}
 

@@ -7,8 +7,8 @@
 
 	/* @ngInject */
 	function SortnavController() {
-		var vm = this;
-		vm.title = 'SortnavController';
+		var sortnavCtrl = this;
+		sortnavCtrl.title = 'SortnavController';
 
 		activate();
 

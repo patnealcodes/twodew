@@ -3,9 +3,9 @@
 
 	angular
 		.module('twodew')
-		.directive('sortNav', sortNav);
+		.directive('sortnav', sortnav);
 
-	function sortNav() {
+	function sortnav() {
 		var directive = {
 			controller: 'SortnavController',
 			controllerAs: 'sortnavCtrl',

@@ -5,16 +5,19 @@
 		.module('twodew')
 		.controller('DoingController', DoingController);
 
-	DoingController.$inject = ['$state'];
+	DoingController.$inject = ['$state', '$http'];
 
-	function DoingController($state) {
-		var vm = this;
-		vm.title = 'DoingController';
+	function DoingController($state, $http) {
+		var doingCtrl = this;
+		doingCtrl.title = 'DoingController';
 
 		activate();
 
 		function activate() {
-			console.log($state.current.name);
+			$http.get('data/doing.json')
+				.then(function (response) {
+					doingCtrl.tasks = response.data;
+				});
 		}
 	}
 

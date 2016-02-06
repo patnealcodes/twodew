@@ -1,0 +1,27 @@
+<section class="td-task">
+	<section class="td-task-settings-page">
+		<span class="td-task-settings-header">Settings</span>
+		<i class="fa fa-check td-task-settings-confirm"></i>
+		<ul class="td-task-settings-option-list">
+			<li class="td-task-settings-option">
+				<div class="left">Icon</div>
+				<div class="right"><span class="fa fa-bar-chart td-task-selected-icon"></span></div>
+			</li>
+			<li class="td-task-settings-option">
+				<div class="left">Color</div>
+				<div class="right"><span class="td-task-selected-swatch"></span></div>
+			</li>
+		</ul>
+	</section>
+	<header class="td-task-header {{task.swatchColor}}">
+		<i class="fa {{task.icon}} td-task-icon"></i>
+		<h1>{{task.title}}</h1>
+		<i class="fa fa-cog td-task-settings-toggle"></i>
+	</header>
+	<p class="td-task-content">{{task.content}}</p>
+	<div class="td-task-actions">
+		<div class="td-task-action td-task-action todo">ToDo</div>
+		<div class="td-task-action td-task-action doing">Doing</div>
+		<div class="td-task-action td-task-action done">Done</div>
+	</div>
+</section>

@@ -149,33 +149,28 @@ html, body {
 
 .td-tasks {
 	@extend .clearfix;
-	padding: 5%;
+	margin: 5%;
 }
 
 .td-task {
 	@include boxShadow( 0 0 .25em rgba(black, .25) );
 	float: left;
-	margin: 0 5% 5% 0;
+	margin: 0 0 2% 0;
 	overflow: hidden;
 	position: relative;
-	width: (90% / 3);
+	width: (84% / 3);
 
-	@media (min-width: ($mq-med + 1)) {
-		&:nth-child(3n+3) {
-			margin-right: 0;
-		}
-	}
-	@media (max-width: $mq-med) and (min-width: ($mq-mobile + 1)) {
-		width: (95% / 2);
-
-		&:nth-child(2n+2) {
-			margin-right: 0;
-		}
+	@media (max-width: $mq-med) {
+		width: (88% / 2);
 	}
 
 	@media (max-width: $mq-mobile) {
 		width: 100%;
 	}
+}
+
+.td-tasks-gutter-width {
+	width: 2%;
 }
 
 .td-task-settings-page {
@@ -238,7 +233,6 @@ html, body {
 }
 
 .td-task-header {
-	background: $red;
 	color: white;
 	padding: .25em;
 	position: relative;
@@ -250,6 +244,16 @@ html, body {
 		text-align: center;
 		text-overflow: ellipsis;
 		white-space: nowrap;
+	}
+
+	&.red {
+		background: $red;
+	}
+	&.blue {
+		background: $blue;
+	}
+	&.green {
+		background: $green;
 	}
 }
 

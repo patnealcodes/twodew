@@ -5,12 +5,8 @@
 		.module('twodew')
 		.directive('sidemenu', sidemenu);
 
-	sidemenu.$inject = ['PropsService'];
-
-	/* @ngInject */
-	function sidemenu(PropsService) {
+	function sidemenu() {
 		var directive = {
-			bindToController: true,
 			controller: 'SidemenuController',
 			controllerAs: 'sidemenuCtrl',
 			link: link,
@@ -21,9 +17,7 @@
 		};
 		return directive;
 
-		function link(scope, element, attrs) {
-
-		}
+		function link(scope, element, attrs) {}
 	}
 
 })();

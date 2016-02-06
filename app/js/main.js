@@ -11,27 +11,18 @@
 
 			$stateProvider
 				.state('todo', {
-					controller: 'TodoController',
-					controllerAs: 'todoCtrl',
 					url: '/todo',
-					templateUrl: 'js/todo/todo.html'
+					template: "<todo>"
 				})
 				.state('doing', {
-					controller: 'DoingController',
-					controllerAs: 'doingCtrl',
 					url: '/doing',
-					templateUrl: 'js/doing/doing.html'
+					template: "<doing>"
 				})
 				.state('done', {
-					controller: 'DoneController',
-					controllerAs: 'doneCtrl',
 					url: '/done',
-					templateUrl: 'js/done/done.html'
+					template: "<done>"
 				})
 			;
-		})
-		.run(function($rootScope, $state) {
-			$state.go('todo');
 		})
 	;
 
