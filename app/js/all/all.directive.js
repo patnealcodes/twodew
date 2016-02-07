@@ -3,16 +3,16 @@
 
 	angular
 		.module('twodew')
-		.directive('doing', doing);
+		.directive('all', all);
 
-	function doing() {
+	function all() {
 		var directive = {
 			controller: 'TasksController',
 			controllerAs: 'tasksCtrl',
 			link: link,
 			replace: true,
 			restrict: 'E',
-			templateUrl: 'js/doing/doing.html',
+			templateUrl: 'js/all/all.html',
 			scope: {}
 		};
 		return directive;

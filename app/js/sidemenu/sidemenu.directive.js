@@ -7,8 +7,6 @@
 
 	function sidemenu() {
 		var directive = {
-			controller: 'SidemenuController',
-			controllerAs: 'sidemenuCtrl',
 			link: link,
 			replace: true,
 			restrict: 'E',

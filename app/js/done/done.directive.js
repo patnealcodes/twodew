@@ -7,8 +7,8 @@
 
 	function done() {
 		var directive = {
-			controller: 'DoneController',
-			controllerAs: 'doneCtrl',
+			controller: 'TasksController',
+			controllerAs: 'tasksCtrl',
 			link: link,
 			replace: true,
 			restrict: 'E',

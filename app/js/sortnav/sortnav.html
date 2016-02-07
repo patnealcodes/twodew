@@ -1,6 +1,12 @@
 <div>
 	<nav class="td-sort" >
 		<a
+			ui-sref="all"
+			ui-sref-active="active"
+			ng-class="{'active': currentSort === 'all'}"
+			class="td-sort-option td-sort-option all"
+		>All</a>
+		<a
 			ui-sref="todo"
 			ui-sref-active="active"
 			ng-class="{'active': currentSort === 'todo'}"

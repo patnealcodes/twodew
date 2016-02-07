@@ -9,8 +9,6 @@
 
 	function task($timeout) {
 		var directive = {
-			controller: 'TaskController',
-			controllerAs: 'taskCtrl',
 			link: link,
 			replace: true,
 			restrict: 'E',

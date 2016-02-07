@@ -37,7 +37,7 @@
 		<sidemenu></sidemenu>
 		<section class="td-view-container">
 			<sortnav></sortnav>
-			<ui-view></ui-view>
+			<main ui-view class="fade"></main>
 		</section>
 	</div>
 
@@ -45,20 +45,18 @@
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="bower_components/underscore/underscore-min.js"></script>
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 	<script src="bower_components/masonry/dist/masonry.pkgd.min.js"></script>
 	<script src="js/main.js"></script>
 
-	<script src="js/shared/props.service.js"></script>
-	<script src="js/todo/todo.controller.js"></script>
+	<script src="js/shared/tasks.controller.js"></script>
+	<script src="js/all/all.directive.js"></script>
 	<script src="js/todo/todo.directive.js"></script>
-	<script src="js/doing/doing.controller.js"></script>
 	<script src="js/doing/doing.directive.js"></script>
-	<script src="js/done/done.controller.js"></script>
 	<script src="js/done/done.directive.js"></script>
 	<script src="js/sidemenu/sidemenu.controller.js"></script>
 	<script src="js/sidemenu/sidemenu.directive.js"></script>
-	<script src="js/sortnav/sortnav.controller.js"></script>
 	<script src="js/sortnav/sortnav.directive.js"></script>
 	<script src="js/task/task.controller.js"></script>
 	<script src="js/task/task.directive.js"></script>

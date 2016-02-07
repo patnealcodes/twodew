@@ -7,8 +7,6 @@
 
 	function sortnav() {
 		var directive = {
-			controller: 'SortnavController',
-			controllerAs: 'sortnavCtrl',
 			link: link,
 			replace: true,
 			restrict: 'E',

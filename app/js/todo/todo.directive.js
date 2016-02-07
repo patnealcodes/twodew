@@ -7,8 +7,8 @@
 
 	function todo() {
 		var directive = {
-			controller: 'TodoController',
-			controllerAs: 'todoCtrl',
+			controller: 'TasksController',
+			controllerAs: 'tasksCtrl',
 			link: link,
 			replace: true,
 			restrict: 'E',

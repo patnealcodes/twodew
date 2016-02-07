@@ -3,13 +3,18 @@
 
 	angular
 		.module('twodew', [
+			'ngAnimate',
 			'ui.router'
 		])
 		.config(function($stateProvider, $urlRouterProvider) {
 
-			$urlRouterProvider.otherwise('todo');
+			$urlRouterProvider.otherwise('all');
 
 			$stateProvider
+				.state('all', {
+					url: '/all',
+					template: "<all>"
+				})
 				.state('todo', {
 					url: '/todo',
 					template: "<todo>"
